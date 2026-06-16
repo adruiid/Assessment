@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Settings Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: Settings
+  m_TableCollectionNameGuidString: 3e9dae14e0a17d049918ab3e14e14f7f
+  m_Entries:
+  - m_Id: 1448428519424
+    m_Key: settings.Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1530368442368
+    m_Key: settings.Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2089485942784
+    m_Key: settings.Language.En
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2109316612096
+    m_Key: settings.Language.Es
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1504535724032
+    m_Key: settings.Volume.Master
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1735490879488
+    m_Key: settings.Volume.Music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1769275998208
+    m_Key: settings.Volume.SFX
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1616171319296
+    m_Key: settings.Graphics
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3766368681984
+    m_Key: settings.Graphics.Low
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3782336397312
+    m_Key: settings.Graphics.Medium
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3819892195328
+    m_Key: settings.Graphics.High
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 8775470950552961241
+  references:
+    version: 2
+    RefIds:
+    - rid: 8775470950552961241
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1781602834442

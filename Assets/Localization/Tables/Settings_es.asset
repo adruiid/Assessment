@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Settings_es
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: es
+  m_SharedData: {fileID: 11400000, guid: 3e9dae14e0a17d049918ab3e14e14f7f, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 1769275998208
+    m_Localized: Efectos de Sonido
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1448428519424
+    m_Localized: Ajustes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1616171319296
+    m_Localized: "Calidad de gr\xE1ficos"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1530368442368
+    m_Localized: Idioma
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2089485942784
+    m_Localized: "Ingl\xE9s"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2109316612096
+    m_Localized: "Espa\xF1ol"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1504535724032
+    m_Localized: Maestro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1735490879488
+    m_Localized: "M\xFAsica"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3766368681984
+    m_Localized: Bajo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3782336397312
+    m_Localized: Medio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3819892195328
+    m_Localized: Alto
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
