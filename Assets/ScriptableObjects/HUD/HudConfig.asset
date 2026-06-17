@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5a1db429226bd34b942dc3bbd2c918c, type: 3}
+  m_Name: HudConfig
+  m_EditorClassIdentifier: Assembly-CSharp::HudConfig
+  maxPlayerHealth: 100
+  startingPlayerHealth: 75
+  maxBossHealth: 250
+  startingBossHealth: 250
+  startingCurrency: 1250
+  currencyAnimationDurationSeconds: 0.4
+  toastVisibleSeconds: 2.5
+  skills:
+  - skillId: skill_fireball
+    iconReference:
+      m_AssetGUID: 402c333508a48114487fb73de9744bb2
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+    cooldownSeconds: 4
+  - skillId: skill_heal
+    iconReference:
+      m_AssetGUID: e0744c59c26df484d9c618e9a1652a74
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+    cooldownSeconds: 6
+  - skillId: skill_dash
+    iconReference:
+      m_AssetGUID: 0ae1420078fdc244fb62709b48290da0
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+    cooldownSeconds: 8
