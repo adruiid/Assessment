@@ -14,7 +14,52 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
   m_GroupName: Default Local Group
   m_GUID: 5ebe44493b62c6b4f95084b80039b0e2
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 09f5b7e1fe182fd43b1883425a38e492
+    m_Address: Assets/UI_Images/Items/armor.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0ae1420078fdc244fb62709b48290da0
+    m_Address: Assets/UI_Images/Skills/dash.jpg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 354e14fadc1df6540a203101c7dda9e3
+    m_Address: Assets/UI_Images/Items/helmet.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 402c333508a48114487fb73de9744bb2
+    m_Address: Assets/UI_Images/Skills/fireball.jpg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 421ddf354227da64c9ac46534dff2b7c
+    m_Address: Assets/UI_Images/Items/gloves.jpeg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4ff5051d14ae102408a49fa61c90f022
+    m_Address: Assets/UI_Images/Items/sabatons.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c73f10673264aaf42901b96206d130af
+    m_Address: Assets/UI_Images/Items/sword.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e0744c59c26df484d9c618e9a1652a74
+    m_Address: Assets/UI_Images/Skills/heal.jpg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ec1a95a2a0d8e594a8e2b700c35f0591
+    m_Address: Assets/UI_Images/Items/shield.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 373e6d0ec6c5ac74095d8b38ecc7fb52, type: 2}
   m_SchemaSet:

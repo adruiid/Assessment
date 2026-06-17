@@ -27,7 +27,48 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 391044481024
-    m_Localized: 'Defensa:'
+    m_Localized: Armadura
+    m_Metadata:
+      m_Items: []
+  - m_Id: 301095810318336
+    m_Localized: Guantes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 301184557596672
+    m_Localized: Unos guantes de cuero normales.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 301360747724800
+    m_Localized: Casco
+    m_Metadata:
+      m_Items: []
+  - m_Id: 301423062499328
+    m_Localized: Casco de hierro resistente
+    m_Metadata:
+      m_Items: []
+  - m_Id: 301567145230336
+    m_Localized: Sabatones
+    m_Metadata:
+      m_Items: []
+  - m_Id: 301668412506112
+    m_Localized: Sabatones de hierro ligeros
+    m_Metadata:
+      m_Items: []
+  - m_Id: 301806421884928
+    m_Localized: Blindaje
+    m_Metadata:
+      m_Items: []
+  - m_Id: 301890140192768
+    m_Localized: Escudo viejo y confiable
+    m_Metadata:
+      m_Items: []
+  - m_Id: 302190884372480
+    m_Localized: Espada
+    m_Metadata:
+      m_Items: []
+  - m_Id: 302233230065664
+    m_Localized: "Una espada de hierro transmitida de generaci\xF3n en generaci\xF3n
+      en tu linaje"
     m_Metadata:
       m_Items: []
   references:

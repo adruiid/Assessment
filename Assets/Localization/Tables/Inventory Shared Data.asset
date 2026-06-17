@@ -19,12 +19,52 @@ MonoBehaviour:
     m_Key: inventory.Title
     m_Metadata:
       m_Items: []
-  - m_Id: 249750962176
-    m_Key: inventory.Description
+  - m_Id: 391044481024
+    m_Key: inventory.Armor.Name
     m_Metadata:
       m_Items: []
-  - m_Id: 391044481024
-    m_Key: inventory.Stats
+  - m_Id: 249750962176
+    m_Key: inventory.Armor.Description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 301095810318336
+    m_Key: inventory.Gloves.Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 301184557596672
+    m_Key: inventory.Gloves.Description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 301360747724800
+    m_Key: inventory.Helmet.Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 301423062499328
+    m_Key: inventory.Helmet.Description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 301567145230336
+    m_Key: inventory.Sabatons.Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 301668412506112
+    m_Key: inventory.Sabatons.Description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 301806421884928
+    m_Key: inventory.Shield.Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 301890140192768
+    m_Key: inventory.Shield.Description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 302190884372480
+    m_Key: inventory.Sword.Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 302233230065664
+    m_Key: inventory.Sword.Description
     m_Metadata:
       m_Items: []
   m_Metadata:

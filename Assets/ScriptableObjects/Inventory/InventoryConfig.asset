@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ab512944746d8b46a08bf142161c697, type: 3}
+  m_Name: InventoryConfig
+  m_EditorClassIdentifier: Assembly-CSharp::InventoryConfig
+  slotCount: 12
+  startingItems:
+  - {fileID: 11400000, guid: f862c45b5297d7945b081fc2d8487729, type: 2}
+  - {fileID: 11400000, guid: 7dc1e056b002f9e4899c5937a3b01a82, type: 2}
+  - {fileID: 11400000, guid: 1cf0224fb6f274c42a8338c9881ef730, type: 2}
+  - {fileID: 11400000, guid: d7f8a63a7bbbf774abec51e34a4bbe7d, type: 2}
+  - {fileID: 11400000, guid: dbdd5d32d38256a42ab9099aadc30935, type: 2}
+  - {fileID: 11400000, guid: 481c02b9392a8344aaa29871da60478e, type: 2}

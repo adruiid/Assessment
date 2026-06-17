@@ -27,7 +27,47 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 391044481024
-    m_Localized: 'Defense:'
+    m_Localized: Armor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 301095810318336
+    m_Localized: Gloves
+    m_Metadata:
+      m_Items: []
+  - m_Id: 301184557596672
+    m_Localized: A regular leather gloves
+    m_Metadata:
+      m_Items: []
+  - m_Id: 301360747724800
+    m_Localized: Helmet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 301423062499328
+    m_Localized: Sturdy Iron Helmet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 301567145230336
+    m_Localized: Sabatons
+    m_Metadata:
+      m_Items: []
+  - m_Id: 301668412506112
+    m_Localized: Lightweight iron sabatons
+    m_Metadata:
+      m_Items: []
+  - m_Id: 301806421884928
+    m_Localized: Shield
+    m_Metadata:
+      m_Items: []
+  - m_Id: 301890140192768
+    m_Localized: Trusty ol' iron shield
+    m_Metadata:
+      m_Items: []
+  - m_Id: 302190884372480
+    m_Localized: Sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 302233230065664
+    m_Localized: An iron sword passed down from your lineage
     m_Metadata:
       m_Items: []
   references:
