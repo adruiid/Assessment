@@ -32,7 +32,6 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-es
-    - Preload
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ef2145023bada934ab084735eabc51cc
     m_Address: HUD_es

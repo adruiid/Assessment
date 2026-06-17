@@ -7,6 +7,7 @@ public class MainMenuController : IInitializable, IDisposable
 {
     private readonly MainMenuModel model;
     private readonly MainMenuView view;
+    private readonly SettingsController settingsController;
     private readonly ISceneNavigator sceneNavigator;
     private readonly IApplicationService applicationService;
     private readonly GameVersionConfig gameVersionConfig;
@@ -15,12 +16,14 @@ public class MainMenuController : IInitializable, IDisposable
     public MainMenuController(
         MainMenuModel model,
         MainMenuView view,
+        SettingsController settingsController,
         ISceneNavigator sceneNavigator,
         IApplicationService applicationService,
         GameVersionConfig gameVersionConfig)
     {
         this.model = model;
         this.view = view;
+        this.settingsController = settingsController;
         this.sceneNavigator = sceneNavigator;
         this.applicationService = applicationService;
         this.gameVersionConfig = gameVersionConfig;
@@ -28,12 +31,12 @@ public class MainMenuController : IInitializable, IDisposable
 
     public void Initialize()
     {
-        model.SetSettingsOpen(false);
+        model.SetNavigatingToGameplay(false);
         view.SetVersionValue(gameVersionConfig.VersionText);
 
-        model.IsSettingsOpen
+        model.IsNavigatingToGameplay
             .DistinctUntilChanged()
-            .Subscribe(view.SetSettingsVisible)
+            .Subscribe(isNavigating => view.SetMainButtonsInteractable(!isNavigating))
             .AddTo(disposables);
 
         view.PlayClicked
@@ -41,7 +44,7 @@ public class MainMenuController : IInitializable, IDisposable
             .AddTo(disposables);
 
         view.SettingsClicked
-            .Subscribe(_ => model.ToggleSettings())
+            .Subscribe(_ => settingsController.Open())
             .AddTo(disposables);
 
         view.QuitClicked
@@ -58,7 +61,13 @@ public class MainMenuController : IInitializable, IDisposable
 
     private async UniTaskVoid HandlePlayClicked()
     {
-        model.SetSettingsOpen(false);
+        if (model.IsNavigationInProgress)
+        {
+            return;
+        }
+
+        model.SetNavigatingToGameplay(true);
+        settingsController.Close();
 
         try
         {
@@ -66,6 +75,7 @@ public class MainMenuController : IInitializable, IDisposable
         }
         catch (OperationCanceledException)
         {
+            model.SetNavigatingToGameplay(false);
         }
     }
 }
