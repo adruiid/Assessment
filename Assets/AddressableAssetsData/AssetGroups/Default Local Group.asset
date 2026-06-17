@@ -25,6 +25,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3132f5c7c18cf6a4a978f926cf8d7778
+    m_Address: Assets/AddressableAssets/Minimap RT.renderTexture
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 354e14fadc1df6540a203101c7dda9e3
     m_Address: Assets/UI_Images/Items/helmet.png
     m_ReadOnly: 0
