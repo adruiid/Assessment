@@ -3,22 +3,18 @@ using UniRx;
 
 public class MainMenuModel : IDisposable
 {
-    private readonly ReactiveProperty<bool> isSettingsOpen = new(false);
+    private readonly ReactiveProperty<bool> isNavigatingToGameplay = new(false);
 
-    public IReadOnlyReactiveProperty<bool> IsSettingsOpen => isSettingsOpen;
+    public IReadOnlyReactiveProperty<bool> IsNavigatingToGameplay => isNavigatingToGameplay;
+    public bool IsNavigationInProgress => isNavigatingToGameplay.Value;
 
-    public void SetSettingsOpen(bool value)
+    public void SetNavigatingToGameplay(bool value)
     {
-        isSettingsOpen.Value = value;
-    }
-
-    public void ToggleSettings()
-    {
-        isSettingsOpen.Value = !isSettingsOpen.Value;
+        isNavigatingToGameplay.Value = value;
     }
 
     public void Dispose()
     {
-        isSettingsOpen.Dispose();
+        isNavigatingToGameplay.Dispose();
     }
 }

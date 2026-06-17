@@ -14,7 +14,6 @@ public class MainMenuView : MonoBehaviour
     [SerializeField] private Button quitButton;
     [SerializeField] private TMP_Text titleLabel;
     [SerializeField] private TMP_Text versionValueLabel;
-    [SerializeField] private GameObject settingsMenuRoot;
     [SerializeField] private float entranceOffsetY = 80f;
     [SerializeField] private float entranceDurationSeconds = 0.45f;
     [SerializeField] private float entranceStaggerSeconds = 0.08f;
@@ -43,9 +42,11 @@ public class MainMenuView : MonoBehaviour
         versionValueLabel.text = value;
     }
 
-    public void SetSettingsVisible(bool isVisible)
+    public void SetMainButtonsInteractable(bool isInteractable)
     {
-        settingsMenuRoot.SetActive(isVisible);
+        playButton.interactable = isInteractable;
+        settingsButton.interactable = isInteractable;
+        quitButton.interactable = isInteractable;
     }
 
     public async UniTask PlayEntranceAsync(CancellationToken token)
