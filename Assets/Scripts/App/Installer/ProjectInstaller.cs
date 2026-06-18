@@ -19,5 +19,6 @@ public class ProjectInstaller : MonoInstaller
         Container.Bind<ILocalizationService>().To<LocalizationService>().AsSingle();
         Container.Bind<IQualitySettingsService>().To<QualitySettingsService>().AsSingle();
         Container.Bind<IAudioMixerService>().To<AudioMixerService>().AsSingle();
+        Container.Bind<IAddressableAssetService>().To<AddressableAssetService>().AsSingle();
     }
 }
