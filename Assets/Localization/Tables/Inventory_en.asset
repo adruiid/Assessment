@@ -70,6 +70,10 @@ MonoBehaviour:
     m_Localized: An iron sword passed down from your lineage
     m_Metadata:
       m_Items: []
+  - m_Id: 1179223495094272
+    m_Localized: 'Stat:'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
