@@ -71,6 +71,10 @@ MonoBehaviour:
       en tu linaje"
     m_Metadata:
       m_Items: []
+  - m_Id: 1179223495094272
+    m_Localized: "Estad\xEDstica"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

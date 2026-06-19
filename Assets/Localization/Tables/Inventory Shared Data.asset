@@ -67,6 +67,10 @@ MonoBehaviour:
     m_Key: inventory.Sword.Description
     m_Metadata:
       m_Items: []
+  - m_Id: 1179223495094272
+    m_Key: Inventory.Stat
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
