@@ -164,25 +164,9 @@ Mobile safe-area support is handled with a simple no-code Player Settings approa
 
 With more time, a `Screen.safeArea` layout component could be added to move HUD and modal roots inside the safe rectangle while still allowing fullscreen rendering behind notches.
 
-## Final Audit Commands
-
-These commands were used during the final pass:
-
-```text
-dotnet build Assessment.slnx -v minimal
-rg -n "FindObjectOfType|\.Instance|static |Resources\.Load|IEnumerator|StartCoroutine|Update\(|UnityEngine\.UI\.Text" Assets/Scripts -g "*.cs"
-rg -n "m_text: (New Text|Button|Option A|Option B|Option C)|m_Text: (Option A|Option B|Option C)" Assets/Scenes -g "*.unity"
-```
-
-Expected result:
-
-- Build succeeds.
-- No banned script patterns are found.
-- No default Unity placeholder text remains in scenes.
 
 ## Known Limitations And Improvements
 
 - Unity version is `6000.4.10f1` instead of the requested `6000.3.10f1`.
 - Mobile safe area is documented and handled through Android Player Settings, not through a custom runtime safe-area component.
-- The gameplay systems are UI/demo-focused. Health, boss damage, currency, and item stats are driven by config/model data for assessment demonstration rather than a full combat/inventory backend.
-- A full production version would add automated Unity PlayMode tests, stronger UI snapshot testing, and a reusable theme config for all colors/spacing.
+- UI visuals were not focused and are poorly done, focusing mainly on function.
