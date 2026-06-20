@@ -19,23 +19,23 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 26844147712
-    m_Localized: I am notifying you
+    m_Localized: Fireball cast
     m_Metadata:
       m_Items: []
   - m_Id: 324870418432
-    m_Localized: I am notifying you again
+    m_Localized: Healing spell activated
     m_Metadata:
       m_Items: []
   - m_Id: 433301565440
-    m_Localized: I am notifying you yet again
+    m_Localized: Dash triggered
     m_Metadata:
       m_Items: []
   - m_Id: 500779528192
-    m_Localized: This is the last time I'll be telling you
+    m_Localized: Boss encounter started
     m_Metadata:
       m_Items: []
   - m_Id: 623001546752
-    m_Localized: This is the real last time
+    m_Localized: Inventory opened
     m_Metadata:
       m_Items: []
   references:
