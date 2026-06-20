@@ -18,7 +18,10 @@ MonoBehaviour:
   startingBossHealth: 250
   startingCurrency: 1250
   currencyAnimationDurationSeconds: 0.4
+  bossBarTransitionSeconds: 0.25
+  bossBarHideDelaySeconds: 5
   toastVisibleSeconds: 2.5
+  toastTransitionSeconds: 0.2
   skills:
   - skillId: skill_fireball
     iconReference:
@@ -28,6 +31,16 @@ MonoBehaviour:
       m_SubObjectGUID: 
       m_EditorAssetChanged: 0
     cooldownSeconds: 4
+    bossDamage: 35
+    toastMessage:
+      m_TableReference:
+        m_TableCollectionName: GUID:e6b0d4168437bf446b1d88c3b2aa875f
+      m_TableEntryReference:
+        m_KeyId: 26844147712
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
   - skillId: skill_heal
     iconReference:
       m_AssetGUID: e0744c59c26df484d9c618e9a1652a74
@@ -36,6 +49,16 @@ MonoBehaviour:
       m_SubObjectGUID: 
       m_EditorAssetChanged: 0
     cooldownSeconds: 6
+    bossDamage: 20
+    toastMessage:
+      m_TableReference:
+        m_TableCollectionName: GUID:e6b0d4168437bf446b1d88c3b2aa875f
+      m_TableEntryReference:
+        m_KeyId: 324870418432
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
   - skillId: skill_dash
     iconReference:
       m_AssetGUID: 0ae1420078fdc244fb62709b48290da0
@@ -44,3 +67,13 @@ MonoBehaviour:
       m_SubObjectGUID: 
       m_EditorAssetChanged: 0
     cooldownSeconds: 8
+    bossDamage: 15
+    toastMessage:
+      m_TableReference:
+        m_TableCollectionName: GUID:e6b0d4168437bf446b1d88c3b2aa875f
+      m_TableEntryReference:
+        m_KeyId: 433301565440
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []

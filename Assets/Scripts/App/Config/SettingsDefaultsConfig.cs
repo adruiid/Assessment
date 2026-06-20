@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Localization;
 
 [CreateAssetMenu(
     fileName = "SettingsDefaultsConfig",
@@ -23,9 +25,13 @@ public class SettingsDefaultsConfig : ScriptableObject
     [SerializeField]
     private string defaultLocaleCode = "en";
 
+    [SerializeField]
+    private LocalizedString[] qualityOptionLabels = new LocalizedString[0];
+
     public float DefaultMasterVolume => defaultMasterVolume;
     public float DefaultMusicVolume => defaultMusicVolume;
     public float DefaultSfxVolume => defaultSfxVolume;
     public int DefaultQualityLevel => defaultQualityLevel;
     public string DefaultLocaleCode => defaultLocaleCode;
+    public IReadOnlyList<LocalizedString> QualityOptionLabels => qualityOptionLabels;
 }

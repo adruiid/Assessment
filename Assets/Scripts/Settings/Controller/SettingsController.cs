@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Threading;
 using Cysharp.Threading.Tasks;
 using UniRx;
@@ -12,6 +13,7 @@ public class SettingsController : IInitializable, IDisposable
     private readonly IAudioMixerService audioMixerService;
     private readonly IQualitySettingsService qualitySettingsService;
     private readonly ILocalizationService localizationService;
+    private readonly SettingsDefaultsConfig settingsDefaultsConfig;
     private readonly CompositeDisposable disposables = new();
 
     private string[] localeCodes = Array.Empty<string>();
@@ -22,7 +24,8 @@ public class SettingsController : IInitializable, IDisposable
         ISettingsPersistence settingsPersistence,
         IAudioMixerService audioMixerService,
         IQualitySettingsService qualitySettingsService,
-        ILocalizationService localizationService)
+        ILocalizationService localizationService,
+        SettingsDefaultsConfig settingsDefaultsConfig)
     {
         this.model = model;
         this.view = view;
@@ -30,6 +33,7 @@ public class SettingsController : IInitializable, IDisposable
         this.audioMixerService = audioMixerService;
         this.qualitySettingsService = qualitySettingsService;
         this.localizationService = localizationService;
+        this.settingsDefaultsConfig = settingsDefaultsConfig;
     }
 
     public void Initialize()
@@ -40,8 +44,6 @@ public class SettingsController : IInitializable, IDisposable
         view.SetMasterVolume(model.MasterVolume.Value);
         view.SetMusicVolume(model.MusicVolume.Value);
         view.SetSfxVolume(model.SfxVolume.Value);
-        view.SetGraphicsOptions(qualitySettingsService.GetQualityNames());
-        view.SetGraphicsIndex(model.QualityLevel.Value);
 
         ApplyAudioVolumes();
         ApplyQualityLevel(model.QualityLevel.Value);
@@ -167,10 +169,11 @@ public class SettingsController : IInitializable, IDisposable
             await localizationService.InitializeAsync(token);
 
             localeCodes = localizationService.GetAvailableLocaleCodes();
-            view.SetLanguageOptions(localizationService.GetAvailableLocaleDisplayNames());
-            view.SetLanguageIndex(GetLocaleIndex(model.LocaleCode.Value));
 
             await localizationService.SetLocaleAsync(model.LocaleCode.Value, token);
+            view.SetLanguageOptions(localizationService.GetAvailableLocaleDisplayNames());
+            view.SetLanguageIndex(GetLocaleIndex(model.LocaleCode.Value));
+            await RefreshGraphicsOptionsAsync(token);
         }
         catch (OperationCanceledException)
         {
@@ -182,6 +185,7 @@ public class SettingsController : IInitializable, IDisposable
         try
         {
             await localizationService.SetLocaleAsync(localeCode, token);
+            await RefreshGraphicsOptionsAsync(token);
             view.SetLanguageIndex(GetLocaleIndex(localeCode));
             SaveCurrentSettings();
         }
@@ -258,6 +262,32 @@ public class SettingsController : IInitializable, IDisposable
         }
 
         qualitySettingsService.SetQualityLevel(safeLevel);
+    }
+
+    private async UniTask RefreshGraphicsOptionsAsync(CancellationToken token)
+    {
+        var options = await GetGraphicsOptionLabelsAsync(token);
+
+        view.SetGraphicsOptions(options);
+        view.SetGraphicsIndex(model.QualityLevel.Value);
+    }
+
+    private async UniTask<IReadOnlyList<string>> GetGraphicsOptionLabelsAsync(CancellationToken token)
+    {
+        if (settingsDefaultsConfig.QualityOptionLabels.Count == 0)
+        {
+            return qualitySettingsService.GetQualityNames();
+        }
+
+        var labels = new List<string>();
+
+        foreach (var localizedLabel in settingsDefaultsConfig.QualityOptionLabels)
+        {
+            var label = await localizationService.GetLocalizedStringAsync(localizedLabel, token);
+            labels.Add(label);
+        }
+
+        return labels;
     }
 
     private void SaveCurrentSettings()

@@ -1,12 +1,14 @@
 using Cysharp.Threading.Tasks;
 using System.Collections.Generic;
 using System.Threading;
+using UnityEngine.Localization;
 using UnityEngine.Localization.Settings;
 
 public interface ILocalizationService
 {
     UniTask InitializeAsync(CancellationToken token);
     UniTask SetLocaleAsync(string localeCode, CancellationToken token);
+    UniTask<string> GetLocalizedStringAsync(LocalizedString localizedString, CancellationToken token);
     string GetCurrentLocaleCode();
     string[] GetAvailableLocaleCodes();
     string[] GetAvailableLocaleDisplayNames();
@@ -31,6 +33,15 @@ public class LocalizationService : ILocalizationService
                 return;
             }
         }
+    }
+
+    public async UniTask<string> GetLocalizedStringAsync(LocalizedString localizedString, CancellationToken token)
+    {
+        await InitializeAsync(token);
+
+        return await localizedString
+            .GetLocalizedStringAsync()
+            .ToUniTask(cancellationToken: token);
     }
 
     public string GetCurrentLocaleCode()

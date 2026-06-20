@@ -17,3 +17,28 @@ MonoBehaviour:
   defaultSfxVolume: 0.8
   defaultQualityLevel: 0
   defaultLocaleCode: en
+  qualityOptionLabels:
+  - m_TableReference:
+      m_TableCollectionName: GUID:3e9dae14e0a17d049918ab3e14e14f7f
+    m_TableEntryReference:
+      m_KeyId: 3766368681984
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  - m_TableReference:
+      m_TableCollectionName: GUID:3e9dae14e0a17d049918ab3e14e14f7f
+    m_TableEntryReference:
+      m_KeyId: 3782336397312
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  - m_TableReference:
+      m_TableCollectionName: GUID:3e9dae14e0a17d049918ab3e14e14f7f
+    m_TableEntryReference:
+      m_KeyId: 3819892195328
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
