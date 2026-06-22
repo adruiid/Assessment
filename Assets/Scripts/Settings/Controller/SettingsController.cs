@@ -14,6 +14,7 @@ public class SettingsController : IInitializable, IDisposable
     private readonly IQualitySettingsService qualitySettingsService;
     private readonly ILocalizationService localizationService;
     private readonly SettingsDefaultsConfig settingsDefaultsConfig;
+    private readonly SfxPlayerView sfxPlayerView;
     private readonly CompositeDisposable disposables = new();
 
     private string[] localeCodes = Array.Empty<string>();
@@ -25,7 +26,8 @@ public class SettingsController : IInitializable, IDisposable
         IAudioMixerService audioMixerService,
         IQualitySettingsService qualitySettingsService,
         ILocalizationService localizationService,
-        SettingsDefaultsConfig settingsDefaultsConfig)
+        SettingsDefaultsConfig settingsDefaultsConfig,
+        SfxPlayerView sfxPlayerView)
     {
         this.model = model;
         this.view = view;
@@ -34,6 +36,7 @@ public class SettingsController : IInitializable, IDisposable
         this.qualitySettingsService = qualitySettingsService;
         this.localizationService = localizationService;
         this.settingsDefaultsConfig = settingsDefaultsConfig;
+        this.sfxPlayerView = sfxPlayerView;
     }
 
     public void Initialize()
@@ -76,17 +79,14 @@ public class SettingsController : IInitializable, IDisposable
     private void BindViewEvents()
     {
         view.MasterVolumeChanged
-            .Skip(1)
             .Subscribe(model.SetMasterVolume)
             .AddTo(disposables);
 
         view.MusicVolumeChanged
-            .Skip(1)
             .Subscribe(model.SetMusicVolume)
             .AddTo(disposables);
 
         view.SfxVolumeChanged
-            .Skip(1)
             .Subscribe(model.SetSfxVolume)
             .AddTo(disposables);
 
@@ -100,6 +100,10 @@ public class SettingsController : IInitializable, IDisposable
 
         view.CloseClicked
             .Subscribe(_ => model.Close())
+            .AddTo(disposables);
+
+        view.SfxTestClicked
+            .Subscribe(_ => sfxPlayerView.PlayOnce())
             .AddTo(disposables);
     }
 

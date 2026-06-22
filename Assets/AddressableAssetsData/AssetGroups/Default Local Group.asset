@@ -50,8 +50,18 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 702200084805589419e9247bd2c6efd1
+    m_Address: Assets/Imports/Audio/SFX.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c73f10673264aaf42901b96206d130af
     m_Address: Assets/UI_Images/Items/sword.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d12282936fbc8544ba70b4f6ac2c9dd3
+    m_Address: Assets/Imports/Audio/Music.mp3
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -62,6 +72,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ec1a95a2a0d8e594a8e2b700c35f0591
     m_Address: Assets/UI_Images/Items/shield.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f281cbcecac924f498335cf578a4e2a3
+    m_Address: Assets/AddressableAssets/GlobalAudioMixer.mixer
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

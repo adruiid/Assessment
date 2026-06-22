@@ -9,11 +9,14 @@ using Zenject;
 
 public class HudController : IInitializable, IDisposable
 {
+    private const int AddGoldAmount = 50;
+
     private readonly HudModel model;
     private readonly HudView view;
     private readonly HudConfig hudConfig;
     private readonly IAddressableAssetService addressableAssetService;
     private readonly ILocalizationService localizationService;
+    private readonly ISceneNavigator sceneNavigator;
     private readonly CompositeDisposable disposables = new();
     private readonly List<AsyncOperationHandle<Sprite>> skillIconHandles = new();
     private readonly Queue<string> toastQueue = new();
@@ -22,19 +25,22 @@ public class HudController : IInitializable, IDisposable
     private CancellationTokenSource bossHideDelayTokenSource;
     private int lastCurrencyValue;
     private bool isShowingToast;
+    private bool isReturningToMainMenu;
 
     public HudController(
         HudModel model,
         HudView view,
         HudConfig hudConfig,
         IAddressableAssetService addressableAssetService,
-        ILocalizationService localizationService)
+        ILocalizationService localizationService,
+        ISceneNavigator sceneNavigator)
     {
         this.model = model;
         this.view = view;
         this.hudConfig = hudConfig;
         this.addressableAssetService = addressableAssetService;
         this.localizationService = localizationService;
+        this.sceneNavigator = sceneNavigator;
     }
 
     public void Initialize()
@@ -81,6 +87,14 @@ public class HudController : IInitializable, IDisposable
 
         model.ToastMessages
             .Subscribe(QueueToast)
+            .AddTo(disposables);
+
+        view.AddGoldClicked
+            .Subscribe(_ => model.AddCurrency(AddGoldAmount))
+            .AddTo(disposables);
+
+        view.HomeClicked
+            .Subscribe(_ => ReturnToMainMenuAsync().Forget())
             .AddTo(disposables);
 
         BindSkillSlots(skillCount);
@@ -233,6 +247,25 @@ public class HudController : IInitializable, IDisposable
         if (!isShowingToast)
         {
             ProcessToastQueueAsync().Forget();
+        }
+    }
+
+    private async UniTaskVoid ReturnToMainMenuAsync()
+    {
+        if (isReturningToMainMenu)
+        {
+            return;
+        }
+
+        isReturningToMainMenu = true;
+
+        try
+        {
+            await sceneNavigator.LoadMainMenuAsync(view.DestroyCancellationToken);
+        }
+        catch (OperationCanceledException)
+        {
+            isReturningToMainMenu = false;
         }
     }
 

@@ -17,6 +17,7 @@ public class SettingsView : MonoBehaviour
     [SerializeField] private Slider sfxVolumeSlider;
     [SerializeField] private TMP_Dropdown graphicsDropdown;
     [SerializeField] private TMP_Dropdown languageDropdown;
+    [SerializeField] private Button sfxTestButton;
     [SerializeField] private Button closeButton;
     [SerializeField] private float panelOffsetY = 60f;
     [SerializeField] private float panelAnimationSeconds = 0.25f;
@@ -30,6 +31,7 @@ public class SettingsView : MonoBehaviour
     public IObservable<float> SfxVolumeChanged => sfxVolumeSlider.OnValueChangedAsObservable();
     public IObservable<int> GraphicsChanged => graphicsDropdown.onValueChanged.AsObservable();
     public IObservable<int> LanguageChanged => languageDropdown.onValueChanged.AsObservable();
+    public IObservable<Unit> SfxTestClicked => sfxTestButton.OnClickAsObservable();
     public IObservable<Unit> CloseClicked => closeButton.OnClickAsObservable();
     public CancellationToken DestroyCancellationToken => this.GetCancellationTokenOnDestroy();
 

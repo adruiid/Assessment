@@ -20,6 +20,8 @@ public class HudView : MonoBehaviour
     [SerializeField] private GameObject toastRoot;
     [SerializeField] private TMP_Text toastLabel;
     [SerializeField] private Button inventoryButton;
+    [SerializeField] private Button homeButton;
+    [SerializeField] private Button addGoldButton;
     [SerializeField] private Button[] skillButtons;
     [SerializeField] private Image[] skillIconImages;
     [SerializeField] private Image[] skillCooldownFillImages;
@@ -36,6 +38,8 @@ public class HudView : MonoBehaviour
     public CancellationToken DestroyCancellationToken => this.GetCancellationTokenOnDestroy();
     public int SkillSlotCount => Mathf.Min(skillButtons.Length, skillIconImages.Length, skillCooldownFillImages.Length);
     public IObservable<Unit> InventoryClicked => inventoryButton.OnClickAsObservable();
+    public IObservable<Unit> HomeClicked => homeButton.OnClickAsObservable();
+    public IObservable<Unit> AddGoldClicked => addGoldButton.OnClickAsObservable();
 
     private void Awake()
     {

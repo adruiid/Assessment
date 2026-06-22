@@ -44,6 +44,11 @@ public class HudModel : IDisposable
         Currency.Value = Math.Max(0, value);
     }
 
+    public void AddCurrency(int amount)
+    {
+        SetCurrency(Currency.Value + amount);
+    }
+
     public void SetBossHealth(int value)
     {
         CurrentBossHealth.Value = Clamp(value, 0, MaxBossHealth.Value);

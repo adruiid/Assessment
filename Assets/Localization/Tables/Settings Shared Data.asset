@@ -59,6 +59,10 @@ MonoBehaviour:
     m_Key: settings.Graphics.High
     m_Metadata:
       m_Items: []
+  - m_Id: 2074809841303552
+    m_Key: settings.TestSFX
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

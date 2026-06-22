@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public interface IAudioMixerService
 {
@@ -9,22 +10,51 @@ public interface IAudioMixerService
 
 public class AudioMixerService : IAudioMixerService
 {
-    private float musicVolume = 1f;
-    private float sfxVolume = 1f;
+    private const string MasterVolumeParameter = "MasterVolume";
+    private const string MusicVolumeParameter = "MusicVolume";
+    private const string SfxVolumeParameter = "SfxVolume";
+    private const float MutedDecibels = -80f;
+
+    private readonly AudioMixer audioMixer;
+
+    public AudioMixerService(AudioMixer audioMixer)
+    {
+        this.audioMixer = audioMixer;
+    }
 
     public void SetMasterVolume(float value)
     {
-        AudioListener.volume = Clamp01(value);
+        SetMixerVolume(MasterVolumeParameter, value);
     }
 
     public void SetMusicVolume(float value)
     {
-        musicVolume = Clamp01(value);
+        SetMixerVolume(MusicVolumeParameter, value);
     }
 
     public void SetSfxVolume(float value)
     {
-        sfxVolume = Clamp01(value);
+        SetMixerVolume(SfxVolumeParameter, value);
+    }
+
+    private void SetMixerVolume(string parameterName, float value)
+    {
+        if (audioMixer == null)
+        {
+            return;
+        }
+
+        audioMixer.SetFloat(parameterName, ToDecibels(Clamp01(value)));
+    }
+
+    private float ToDecibels(float value)
+    {
+        if (value <= 0.0001f)
+        {
+            return MutedDecibels;
+        }
+
+        return Mathf.Log10(value) * 20f;
     }
 
     private float Clamp01(float value)

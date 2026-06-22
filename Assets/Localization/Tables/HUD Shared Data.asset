@@ -31,6 +31,14 @@ MonoBehaviour:
     m_Key: hud.Boss
     m_Metadata:
       m_Items: []
+  - m_Id: 2092834338455552
+    m_Key: hud.AddGold
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2163780919312384
+    m_Key: hud.Return
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

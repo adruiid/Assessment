@@ -5,6 +5,7 @@ public class MainMenuSceneInstaller : MonoInstaller
 {
     [SerializeField] private MainMenuView mainMenuView;
     [SerializeField] private SettingsView settingsView;
+    [SerializeField] private SfxPlayerView sfxPlayerView;
 
     public override void InstallBindings()
     {
@@ -13,6 +14,7 @@ public class MainMenuSceneInstaller : MonoInstaller
         Container.BindInterfacesAndSelfTo<MainMenuController>().AsSingle();
 
         Container.Bind<SettingsView>().FromInstance(settingsView).AsSingle();
+        Container.Bind<SfxPlayerView>().FromInstance(sfxPlayerView).AsSingle();
         Container.BindInterfacesAndSelfTo<SettingsModel>().AsSingle();
         Container.BindInterfacesAndSelfTo<SettingsController>().AsSingle();
     }

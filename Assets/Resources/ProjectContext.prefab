@@ -109,3 +109,4 @@ MonoBehaviour:
   gameVersionConfig: {fileID: 11400000, guid: 9cfa9b029dcf6344a8c13f4d246004d9, type: 2}
   sceneConfig: {fileID: 11400000, guid: df8a3371bf204fa4ba08bd8abbd7cdab, type: 2}
   settingsDefaultsConfig: {fileID: 11400000, guid: 074e80734b893ae4a9a9ca1b02db1469, type: 2}
+  audioMixer: {fileID: 24100000, guid: f281cbcecac924f498335cf578a4e2a3, type: 2}

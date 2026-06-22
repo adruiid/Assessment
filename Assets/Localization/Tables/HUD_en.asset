@@ -34,6 +34,14 @@ MonoBehaviour:
     m_Localized: Boss
     m_Metadata:
       m_Items: []
+  - m_Id: 2092834338455552
+    m_Localized: Add Gold
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2163780919312384
+    m_Localized: Return
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

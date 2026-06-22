@@ -21,6 +21,25 @@ public class QualitySettingsService : IQualitySettingsService
 
     public void SetQualityLevel(int level)
     {
-        QualitySettings.SetQualityLevel(level);
+        var names = QualitySettings.names;
+
+        if (names.Length == 0)
+        {
+            return;
+        }
+
+        var safeLevel = level;
+
+        if (safeLevel < 0)
+        {
+            safeLevel = 0;
+        }
+
+        if (safeLevel >= names.Length)
+        {
+            safeLevel = names.Length - 1;
+        }
+
+        QualitySettings.SetQualityLevel(safeLevel, true);
     }
 }
